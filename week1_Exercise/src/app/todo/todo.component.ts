@@ -33,7 +33,6 @@ export class TodoComponent implements OnInit {
         completed : false,
         });
         this.id++;
-       console.log(this.todos);
       }
       deleteTodoItem(id){
       this.todos = this.todos.filter(todo => todo.id !== id);
