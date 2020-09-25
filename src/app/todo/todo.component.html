@@ -1,0 +1,11 @@
+<div>
+<h1>{{ appHeading }}</h1>
+<app-todo-input
+(todoData)="addTodo($event)"
+></app-todo-input>
+<app-todo-list 
+ (todoId)="deleteTodoItem($event)"
+  [todos]=todos
+  (itemCompleted)="todoCompleted($event)" 
+  ></app-todo-list>
+</div>

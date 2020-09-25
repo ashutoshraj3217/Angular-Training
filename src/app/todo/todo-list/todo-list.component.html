@@ -1,0 +1,25 @@
+<div *ngFor="let item of todos" class="todoItem">
+   
+    <i 
+    *ngIf="item.completed" 
+    else #checked 
+    class="fa fa-check-square-o" 
+    style="font-size:22px"
+    (click)="todoCompleted(item.id)"
+    [ngClass]="{'hideTodo':item.completed === false}"
+    ></i>  
+   
+    <i 
+    #checked 
+    class="fa fa-square-o" 
+    style="font-size:22px" 
+    (click)="todoCompleted(item.id)"
+    [ngClass]="{'hideTodo':item.completed === true}"
+    >
+    </i>
+   
+  <span [ngStyle]="{ 'color': (item.id % 2 === 0 ? 'rgb(146 86 86);' : 'rgb(90 62 62);') }">{{ item.title }}</span>
+  <span class="remove-item" (click)="deleteTodo(item.id)">
+    &times;
+</span>
+</div>
